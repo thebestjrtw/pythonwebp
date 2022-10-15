@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  webp:
+    container_name: pythonWebp
+    image: python:2.7-slim
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh
+      - ./src:/project
+      - /${img_path}:/var/img_path
+    working_dir: /project
+    entrypoint: /entrypoint.sh
+
